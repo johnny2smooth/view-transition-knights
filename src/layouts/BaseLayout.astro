@@ -1,0 +1,19 @@
+---
+import { ViewTransitions } from "astro:transitions";
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <ViewTransitions />
+  </head>
+  <body>
+    <h1 class="text-center text-6xl p-2">{title}</h1>
+      <slot />
+      <!-- your content is injected here -->
+  </body>
+</html>

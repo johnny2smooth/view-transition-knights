@@ -1,0 +1,13 @@
+---
+const { character } = Astro.props;
+---
+
+<a href={`/${character}`} class="underline text-4xl">
+  <img
+    src={`${character}.jpeg`}
+    alt={`A menacing ${character}`}
+    width="500"
+    transition:name={character}
+  />
+  The {character}
+</a>
