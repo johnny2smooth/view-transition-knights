@@ -1,0 +1,37 @@
+---
+import { ViewTransitions } from "astro:transitions";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <h1 class="text-center text-6xl p-2">Choose your fighter</h1>
+    <div class="flex gap-4 justify-center">
+      <div>
+        <img
+          src="knight.jpeg"
+          alt="man dressed up as a knight"
+          width="500"
+          transition:name="knight"
+        />
+        <a href="/knight" class="underline text-4xl">The knight</a>
+      </div>
+      <div>
+        <img
+          src="thug.jpeg"
+          alt="man dressed up as a thug"
+          width="500"
+          transition:name="thug"
+        />
+        <a href="/thug" class="underline text-4xl">The thug</a>
+      </div>
+    </div>
+  </body>
+</html>
