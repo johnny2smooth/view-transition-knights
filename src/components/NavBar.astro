@@ -2,7 +2,7 @@
 const params = Astro.params;
 ---
 
-<header class="w-full flex items-start justify-between p-6">
+<header class="w-full flex items-start justify-between p-6 sticky top-0 z-10">
   <nav class="flex gap-4 font-extralight">
     <ul class="flex gap-4 bg-[#f3f3f3] p-[.3rem] rounded-md">
       <li>
@@ -22,8 +22,15 @@ const params = Astro.params;
       >
     </div>
   </nav>
-  <a href="/">
-    <img src="smilesmiley.svg" alt="logo" width={50} />
+  <a href="/" class="z-100">
+    <img
+      src="smilesmiley.svg"
+      alt="logo"
+      width={50}
+      class="spin bg-[#ffffff50]"
+      transition:name="spin"
+      id="color-changing"
+    />
   </a>
   <div class="flex gap-4 font-extralight">
     <div class="flex gap-4 bg-[#f3f3f3] p-[.3rem] rounded-md">
@@ -35,3 +42,17 @@ const params = Astro.params;
     </div>
   </div>
 </header>
+<style>
+  .spin {
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(360deg);
+    }
+  }
+</style>
