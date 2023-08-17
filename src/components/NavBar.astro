@@ -1,0 +1,37 @@
+---
+const params = Astro.params;
+---
+
+<header class="w-full flex items-start justify-between p-6">
+  <nav class="flex gap-4 font-extralight">
+    <ul class="flex gap-4 bg-[#f3f3f3] p-[.3rem] rounded-md">
+      <li>
+        <button class="hover:bg-[#b1ff39] px-2 py-1 rounded-md"
+          ><span>Menu</span></button
+        >
+      </li>
+      <li>
+        <button class="hover:bg-[#b1ff39] px-2 py-1 rounded-md"
+          ><span>Shop All</span></button
+        >
+      </li>
+    </ul>
+    <div class="bg-[#f3f3f3] p-[.3rem] rounded-md">
+      <button class="hover:bg-[#b1ff39] px-2 py-1 rounded-md"
+        ><span>Search</span></button
+      >
+    </div>
+  </nav>
+  <a href="/">
+    <img src="smilesmiley.svg" alt="logo" width={50} />
+  </a>
+  <div class="flex gap-4 font-extralight">
+    <div class="flex gap-4 bg-[#f3f3f3] p-[.3rem] rounded-md">
+      <a href="/login" class="hover:bg-[#b1ff39] px-2 py-1 rounded-md">Login</a>
+      <a href="/register" class="hover:bg-[#b1ff39] px-2 py-1 rounded-md"
+        >Register</a
+      >
+      <a href="/cart" class="hover:bg-[#b1ff39] px-2 py-1 rounded-md">Cart</a>
+    </div>
+  </div>
+</header>

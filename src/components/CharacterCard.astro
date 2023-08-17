@@ -5,7 +5,10 @@ interface Props {
 const { character } = Astro.props;
 ---
 
-<a href={`/${character}`} class="underline text-4xl">
+<a
+  href={`/${character}`}
+  class="underline underline-offset-4 text-4xl noto-serif"
+>
   <img
     src={`${character}.jpeg`}
     alt={`A menacing ${character}`}
@@ -14,3 +17,8 @@ const { character } = Astro.props;
   />
   The {character}
 </a>
+<style>
+  .noto-serif {
+    font-family: "Noto Serif Display Variable", sans-serif;
+  }
+</style>

@@ -1,4 +1,5 @@
 ---
+import GoHome from "../components/GoHome.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
 interface Character {
@@ -24,13 +25,13 @@ const { character } = Astro.params;
 const { skill, price, upgrades } = Astro.props;
 ---
 
-<BaseLayout title={character ? character : "404"}>
+<BaseLayout title={character ? `The ${character}` : "404"}>
   <div class="flex flex-col items-center justify-center">
     <div>
       <img
         src={`${character}.jpeg`}
         alt={`Someone dressed up as a ${character}`}
-        width="500"
+        width="520"
         transition:name={`${character}`}
       />
       <h2 class="text-4xl">You have chosen wisely...</h2>
@@ -41,8 +42,6 @@ const { skill, price, upgrades } = Astro.props;
         }
       </h4>
     </div>
-    <a href="/" class="text-lg" class="flex flex-col items-center"
-      >&larr; go home</a
-    >
+    <GoHome />
   </div>
 </BaseLayout>

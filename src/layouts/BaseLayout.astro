@@ -1,5 +1,8 @@
 ---
 import { ViewTransitions } from "astro:transitions";
+import "@fontsource-variable/unbounded";
+import "@fontsource-variable/noto-serif-display";
+import NavBar from "../components/NavBar.astro";
 interface Props {
   title: string;
 }
@@ -15,8 +18,14 @@ const { title } = Astro.props;
     <ViewTransitions />
   </head>
   <body>
-    <h1 class="text-center text-6xl p-2">{title}</h1>
+    <NavBar />
+    <h1 class="text-center text-6xl p-2 unbounded">{title}</h1>
     <slot />
     <!-- your content is injected here -->
+    <style>
+      .unbounded {
+        font-family: "Unbounded Variable", sans-serif;
+      }
+    </style>
   </body>
 </html>
