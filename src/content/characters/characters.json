@@ -1,0 +1,26 @@
+[
+  {
+    "character": "knight",
+    "skill": "slash",
+    "price": 300,
+    "upgrades": "fart"
+  },
+  {
+    "character": "teddy",
+    "skill": "hug",
+    "price": 250,
+    "upgrades": "fart"
+  },
+  {
+    "character": "thug",
+    "skill": "bash",
+    "price": 500,
+    "upgrades": "fart"
+  },
+  {
+    "character": "warewolf",
+    "skill": "chomp",
+    "price": 700,
+    "upgrades": "fart"
+  }
+]

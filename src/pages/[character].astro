@@ -1,17 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-export function getStaticPaths() {
-  return [
-    { params: { character: "knight" } },
-    { params: { character: "teddy" } },
-    { params: { character: "thug" } },
-    { params: { character: "warewolf" } },
-  ];
+import { getEntry } from "astro:content";
+interface Character {
+  character: string;
+  skill: string;
+  price: number;
+  upgrades: string;
 }
+
+export async function getStaticPaths() {
+  let { data: characterEntry } = await getEntry("characters", "characters");
+  return characterEntry?.map(
+    ({ character, skill, price, upgrades }: Character) => {
+      return {
+        params: { character },
+        props: { skill, price, upgrades },
+      };
+    }
+  );
+}
+
 const { character } = Astro.params;
+const { skill, price, upgrades } = Astro.props;
 ---
 
-<BaseLayout title={character}>
+<BaseLayout title={character ? character : "404"}>
   <div class="flex flex-col items-center justify-center">
     <div>
       <img
@@ -21,6 +34,12 @@ const { character } = Astro.params;
         transition:name={`${character}`}
       />
       <h2 class="text-4xl">You have chosen wisely...</h2>
+      <h3>The {character}'s special ability is to {skill}</h3>
+      <h4>
+        He costs ${price} and pretty soon you will be able to make him {
+          upgrades
+        }
+      </h4>
     </div>
     <a href="/" class="text-lg" class="flex flex-col items-center"
       >&larr; go home</a
