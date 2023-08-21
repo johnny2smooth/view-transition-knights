@@ -1,9 +1,17 @@
 ---
+import AddToCart from "../components/AddToCart.astro";
 import GoHome from "../components/GoHome.astro";
+import ItemDescription from "../components/ItemDescription.astro";
+// import PhotoAside from "../components/PhotoAside.astro";
+
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getEntry } from "astro:content";
 interface Character {
   character: string;
+  title: string;
+  description: string;
+  material: string;
+  color: string;
   skill: string;
   price: number;
   upgrades: string;
@@ -11,37 +19,39 @@ interface Character {
 
 export async function getStaticPaths() {
   let { data: characterEntry } = await getEntry("characters", "characters");
-  return characterEntry?.map(
-    ({ character, skill, price, upgrades }: Character) => {
-      return {
-        params: { character },
-        props: { skill, price, upgrades },
-      };
-    }
-  );
+  return characterEntry?.map(({ character, ...rest }: Character) => {
+    return {
+      params: { character },
+      props: { ...rest },
+    };
+  });
 }
 
 const { character } = Astro.params;
-const { skill, price, upgrades } = Astro.props;
+const { title, description, material, color, skill, price, upgrades } =
+  Astro.props;
 ---
 
 <BaseLayout title={character ? `The ${character}` : "404"}>
-  <div class="flex flex-col items-center justify-center">
-    <div>
-      <img
-        src={`${character}.jpeg`}
-        alt={`Someone dressed up as a ${character}`}
-        width="520"
-        transition:name={`${character}`}
-      />
-      <h2 class="text-4xl">You have chosen wisely...</h2>
-      <h3>The {character}'s special ability is to {skill}</h3>
-      <h4>
-        He costs ${price} and pretty soon you will be able to make him {
-          upgrades
-        }
-      </h4>
+  <div class="grid relative z-20 grid-cols-3 p-0 lg:gap-4 lg:py-0 lg:px-5">
+    <ItemDescription
+      price={price}
+      title={title}
+      description={description}
+      material={material}
+      color={material}
+    />
+    <div class="flex flex-col items-center justify-center">
+      <div class="flex gap-2">
+        <img
+          src={`${character}.jpeg`}
+          alt={`Someone dressed up as a ${character}`}
+          width="520"
+          transition:name={`${character}`}
+        />
+      </div>
+      <GoHome />
     </div>
-    <GoHome />
+    <AddToCart price={price} />
   </div>
 </BaseLayout>

@@ -1,0 +1,38 @@
+---
+const { price } = Astro.props;
+---
+
+<div class="flex flex-col gap-2 pl-12">
+  <div class="flex justify-between">
+    <p>size</p>
+    <p>size chart</p>
+  </div>
+  <ul class="flex justify-around">
+    <li>
+      <button class="py-2 px-8 text-sm rounded-md bg-[#f3f3f3]">xs</button>
+    </li>
+    <li>
+      <button class="py-2 px-8 text-sm rounded-md bg-[#f3f3f3]">s</button>
+    </li>
+    <li>
+      <button class="py-2 px-8 text-sm rounded-md bg-[#f3f3f3]">m</button>
+    </li>
+    <li>
+      <button class="py-2 px-8 text-sm rounded-md bg-[#f3f3f3]">l</button>
+    </li>
+    <li>
+      <button class="py-2 px-8 text-sm rounded-md bg-[#f3f3f3]">xl</button>
+    </li>
+  </ul>
+  <div class="border border-black border-solid flex justify-between">
+    <button class="p-4 text-lg">-</button>
+    <p class="p-4">1</p>
+    <button class="p-4 text-lg">+</button>
+  </div>
+  <button
+    class="flex justify-between bg-[#f3f3f3] hover:bg-[#b1ff39] transition-colors rounded-lg"
+  >
+    <span class="p-4 text-lg">Add to Cart</span>
+    <span class="p-4 text-lg">${price}</span>
+  </button>
+</div>

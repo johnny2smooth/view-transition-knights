@@ -1,38 +1,60 @@
 [
   {
     "character": "knight",
+    "title": "Valiant Vanguard Armor",
+    "description": "Crafted from enchanted steel, this armor offers both protection and style.",
+    "material": "Enchanted Steel",
+    "color": "Shimmering Silver",
     "skill": "slash",
     "price": 300,
-    "upgrades": "fart"
+    "upgrades": "the dame"
   },
   {
     "character": "thug",
+    "title": "Rogue's Rugged Attire",
+    "description": "Embrace the rugged look with this weathered leather ensemble, perfect for urban adventures.",
+    "material": "Weathered Leather",
+    "color": "Smokey Brown",
     "skill": "bash",
     "price": 500,
-    "upgrades": "fart"
+    "upgrades": "bags of gold"
   },
   {
     "character": "teddy",
+    "title": "Cuddler's Comfort Outfit",
+    "description": "Wrap yourself in softness with this fuzzy outfit that's both adorable and huggable.",
+    "material": "Fuzzy Fabric",
+    "color": "Cozy Beige",
     "skill": "hug",
     "price": 250,
-    "upgrades": "fart"
+    "upgrades": "fuzz"
   },
   {
     "character": "warewolf",
+    "title": "Lunar Lycanthrope Garb",
+    "description": "Unleash your inner beast with this attire that captures the essence of the moonlit hunt.",
+    "material": "Moonshadow Fur",
+    "color": "Nightfall Black",
     "skill": "chomp",
     "price": 700,
-    "upgrades": "fart"
+    "upgrades": "sharper teeth"
   },
   {
     "character": "schoolboy",
+    "title": "Prodigious Pupil's Ensemble",
+    "description": "Embark on educational adventures with this outfit that's as inquisitive as it is stylish.",
+    "material": "Scholarly Tweed",
+    "color": "Bookish Brown",
     "skill": "bully",
     "price": 9000,
-    "upgrades": "fart"
+    "upgrades": "a new book"
   },
   {
     "character": "bunny",
+    "title": "Bouncing Bunny Attire",
+    "description": "Hop into fun and frolic with this bouncy attire that captures the spirit of youthful joy.",
     "skill": "hop",
     "price": 40,
-    "upgrades": "fart"
+    "upgrades": "extra-bounce"
   }
 ]
