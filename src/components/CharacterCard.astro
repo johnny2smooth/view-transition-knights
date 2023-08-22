@@ -7,7 +7,7 @@ const { character } = Astro.props;
 
 <a
   href={`/${character}`}
-  class="underline underline-offset-4 text-4xl noto-serif"
+  class="underline underline-offset-4 text-4xl texturina"
 >
   <img
     src={`${character}.jpeg`}
@@ -20,5 +20,11 @@ const { character } = Astro.props;
 <style>
   .noto-serif {
     font-family: "Noto Serif Display Variable", sans-serif;
+  }
+  .red-mono {
+    font-family: "Red Hat Mono Variable", sans-serif;
+  }
+  .texturina {
+    font-family: "Texturina Variable", sans-serif;
   }
 </style>
