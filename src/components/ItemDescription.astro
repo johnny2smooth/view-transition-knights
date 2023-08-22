@@ -2,16 +2,16 @@
 const { price, title, description, material, color } = Astro.props;
 ---
 
-<div class="w-80 flex flex-col gap-8">
+<div class="flex flex-col gap-8">
   <div class="flex flex-col gap-2">
-    <p class="text-sm noto-serif">$ {price}.00</p>
+    <p class="text-sm red-mono">$ {price}.00</p>
     <p class="text-2xl font-light text-slate-800 unbounded">{title}</p>
   </div>
-  <div class="flex flex-col gap-2 text-sm font-light">
-    <p class="uppercase noto-serif tracking-widest">details</p>
+  <div class="flex flex-col gap-2 text-sm font-light max-w-xs red-mono">
+    <p class="uppercase tracking-widest font-normal">details</p>
     <p class="">{description}</p>
-    <p>Material: {material}</p>
-    <p>Color: {color}</p>
+    <p><span class="font-normal">Material:</span> {material}</p>
+    <p><span class="font-normal">Color:</span> {color}</p>
   </div>
 </div>
 <style>
@@ -20,5 +20,8 @@ const { price, title, description, material, color } = Astro.props;
   }
   .unbounded {
     font-family: "Unbounded Variable", sans-serif;
+  }
+  .red-mono {
+    font-family: "Red Hat Mono Variable", sans-serif;
   }
 </style>
